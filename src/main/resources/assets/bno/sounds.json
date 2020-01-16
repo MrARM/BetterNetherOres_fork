@@ -1,0 +1,11 @@
+{
+  "conga": {
+    "sounds": [
+      {
+        "name": "bno:conga",
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.bno:conga"
+  }
+}
