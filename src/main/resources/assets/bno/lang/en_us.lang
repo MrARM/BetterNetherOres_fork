@@ -24,10 +24,4 @@ tile.ore_nethercopper.name=Nether Copper Ore
 tile.ore_netherlead.name=Nether Lead Ore
 tile.ore_netheruranium.name=Nether Uranium Ore
 
-entity.PigZombie.name=Chauvinist Pig
-subtitles.entity.zombie_pigman.ambient=Chauvinist Pig grunts
-subtitles.entity.zombie_pigman.angry=Chauvinist Pig angers
-subtitles.entity.zombie_pigman.death=Chauvinist Pig dies
-subtitles.entity.zombie_pigman.hurt=Chauvinist Pig hurts
-
 subtitles.bno:conga=Conga Time!
