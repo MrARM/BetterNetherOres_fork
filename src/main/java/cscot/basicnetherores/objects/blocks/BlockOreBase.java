@@ -1,6 +1,7 @@
 package cscot.basicnetherores.objects.blocks;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 import cscot.basicnetherores.BasicNetherOres;
@@ -170,14 +171,8 @@ public class BlockOreBase extends Block implements IHasModel {
 
     	List<?> list = world.getEntitiesWithinAABB(EntityPigZombie.class, new AxisAlignedBB(x - rngProt, y - rngProt, z - rngProt, x + rngProt, y + rngProt, z + rngProt));
 
-    	if (list.size() > 0){
-			if(thief.getMaxHealth() == thief.getHealth()){
-				ResourceLocation location = new ResourceLocation("bno", "conga");
-				SoundEvent pigman_conga = new SoundEvent(location);
-				thief.world.playSound(thief, thief.posX, thief.posY, thief.posZ - 5, pigman_conga, SoundCategory.HOSTILE, 1, 1);
-			}
-
-		}
+    	// Prevent multiple congas
+    	boolean isAlpha = true;
 
     	for(int i = 0; i < list.size(); i++) {
     		
@@ -185,6 +180,14 @@ public class BlockOreBase extends Block implements IHasModel {
     		if(entity instanceof EntityPigZombie) {
     			
     			EntityPigZombie guardPigs = (EntityPigZombie)entity;
+
+    			// Alpha pig
+				if(thief.getMaxHealth() == thief.getHealth() && isAlpha) {
+					guardPigs.playSound(new SoundEvent(new ResourceLocation(BasicNetherOres.MOD_ID, "conga")), 2, 1);
+					guardPigs.setHeldItem(guardPigs.getActiveHand(), new ItemStack(Items.DIAMOND_SWORD));
+					isAlpha = false;
+				}
+
     			guardPigs.setRevengeTarget(thief);
     		}
     	}

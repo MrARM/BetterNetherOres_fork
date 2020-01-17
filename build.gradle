@@ -56,4 +56,5 @@ processResources {
     }
 }
 
-sourceSets { main { output.resourcesDir = output.classesDir } }
+// Workaround to get res in testing. Comment to build
+//sourceSets { main { output.resourcesDir = output.classesDir } }

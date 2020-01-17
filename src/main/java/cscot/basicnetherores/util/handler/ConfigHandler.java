@@ -23,26 +23,26 @@ public class ConfigHandler {
             "bno:ore_nethergold",
             "bno:ore_netheriron",
             "bno:ore_nethercoal",
-            "bno:ore_nethercopper",
-            "bno:ore_nethertin",
+            "bno:ore_netheruranium",
+            "bno:ore_netherlead",
             "minecraft:glowstone",
             "minecraft:quartz_ore"
 
     };
 
-    public static int protectionRange = 16;
+    public static int protectionRange = 8;
 
     public static String[] protectedBlocks;
 
     //Emerald Settings
     public static int emeraldVeinSize = 3;
-    public static int emeraldChance = 15;
+    public static int emeraldChance = 5;
     public static int emeraldMinHeight = 0;
     public static int emeraldMaxHeight = 125;
 
     //Diamond Settings
     public static int diamondVeinSize = 4;
-    public static int diamondChance = 20;
+    public static int diamondChance = 3;
     public static int diamondMinHeight = 0;
     public static int diamondMaxHeight = 125;
 
@@ -82,9 +82,9 @@ public class ConfigHandler {
     public static int copperMinHeight = 0;
     public static int copperMaxHeight = 60;
 
-    //Tin Settings
+    //Lead Settings
     public static int tinVeinSize = 6;
-    public static int tinChance = 20;
+    public static int tinChance = 10;
     public static int tinMinHeight = 0;
     public static int tinMaxHeight = 127;
 
@@ -97,7 +97,7 @@ public class ConfigHandler {
         category = "Ore Protector";
         config.addCustomCategoryComment(category, "Pigman Projection Settings");
         pigmanGuard = config.getBoolean("Pigmen Protection", category, true, "If set to 'true' Pigmen will protect Nether Ores");
-        protectionRange = config.getInt("Projection Range", category, 16, 1, 64,"Set range that Pigmen will aggro when mining ores");
+        protectionRange = config.getInt("Projection Range", category, 8, 1, 64,"Set range that Pigmen will aggro when mining ores");
         silkEffect = config.getBoolean("Silk Enchantment Effect", category, true, "Set to false if you want the Pigmen to attack when using Silk Touch Tools");
         protectedBlocks = config.getStringList("Protected Blocks", category, protectedBlocksArray, "Add Blocks to be protected by Pigmen ***Not Fully Implemented Yet ***(Example: minecraft:glowstone)");
 
@@ -109,12 +109,12 @@ public class ConfigHandler {
         config.addCustomCategoryComment(category, "Ore Generation Configurations");
 
         emeraldVeinSize = config.getInt("Emerald Vein Size", category, 3, 0, 64, "Set Emerald Vein Size");
-        emeraldChance = config.getInt("Emerald Spawn Chance",category, 15, 0, 45, "Set Emerald Spawn Chance");
+        emeraldChance = config.getInt("Emerald Spawn Chance",category, 5, 0, 45, "Set Emerald Spawn Chance");
         emeraldMinHeight = config.getInt("Emerald Min Height", category, 0,0,125, "Set Emerald Min Spawn Height");
         emeraldMaxHeight = config.getInt("Emerald Max Height", category, 125, 0, 126, "Set Emerald Max Spawn Height");
 
         diamondVeinSize = config.getInt("Diamond Vein Size", category, 4, 0, 64, "Set Diamond Vein Size");
-        diamondChance = config.getInt("Diamond Spawn Chance",category, 20, 0, 45, "Set Diamond Spawn Chance");
+        diamondChance = config.getInt("Diamond Spawn Chance",category, 5, 0, 45, "Set Diamond Spawn Chance");
         diamondMinHeight = config.getInt("Diamond Min Height", category, 0,0,125, "Set Diamond Min Spawn Height");
         diamondMaxHeight = config.getInt("Diamond Max Height", category, 125, 0, 126, "Set Diamond Max Spawn Height");
 
@@ -143,15 +143,15 @@ public class ConfigHandler {
         ironMinHeight = config.getInt("Iron Min Height", category, 0,0,125, "Set Iron Min Spawn Height");
         ironMaxHeight = config.getInt("Iron Max Height", category, 125, 0, 126, "Set Iron Max Spawn Height");
 
-        copperVeinSize = config.getInt("Uranium Vein Size", category, 6, 0, 64, "Set Copper Vein Size");
-        copperChance = config.getInt("Uranium Spawn Chance",category, 35, 0, 75, "Set Copper Spawn Chance");
+        copperVeinSize = config.getInt("Uranium Vein Size", category, 2, 0, 64, "Set Copper Vein Size");
+        copperChance = config.getInt("Uranium Spawn Chance",category, 15, 0, 75, "Set Copper Spawn Chance");
         copperMinHeight = config.getInt("Uranium Min Height", category, 0,0,125, "Set Copper Min Spawn Height");
-        copperMaxHeight = config.getInt("Uranium Max Height", category, 125, 0, 126, "Set Copper Max Spawn Height");
+        copperMaxHeight = config.getInt("Uranium Max Height", category, 60, 0, 126, "Set Copper Max Spawn Height");
 
-        tinVeinSize = config.getInt("Lead Vein Size", category, 4, 0, 64, "Set Tin Vein Size");
-        tinChance = config.getInt("Lead Spawn Chance",category, 30, 0, 75, "Set Tin Spawn Chance");
+        tinVeinSize = config.getInt("Lead Vein Size", category, 6, 0, 64, "Set Tin Vein Size");
+        tinChance = config.getInt("Lead Spawn Chance",category, 15, 0, 75, "Set Tin Spawn Chance");
         tinMinHeight = config.getInt("Lead Min Height", category, 0,0,125, "Set Tin Min Spawn Height");
-        tinMaxHeight = config.getInt("Lead Max Height", category, 125, 0, 126, "Set Tin Max Spawn Height");
+        tinMaxHeight = config.getInt("Lead Max Height", category, 127, 0, 126, "Set Tin Max Spawn Height");
 
 
         config.save();
