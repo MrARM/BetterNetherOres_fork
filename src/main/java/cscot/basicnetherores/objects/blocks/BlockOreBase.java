@@ -174,6 +174,9 @@ public class BlockOreBase extends Block implements IHasModel {
     	// Prevent multiple congas
     	boolean isAlpha = true;
 
+    	if(thief.isDead || thief == null)
+    		return;
+
     	for(int i = 0; i < list.size(); i++) {
     		
     		Entity entity = (Entity)list.get(i);
