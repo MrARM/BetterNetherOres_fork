@@ -186,7 +186,7 @@ public class BlockOreBase extends Block implements IHasModel {
 
     			// Alpha pig
 				if(thief.getMaxHealth() == thief.getHealth() && isAlpha) {
-					guardPigs.playSound(new SoundEvent(new ResourceLocation(BasicNetherOres.MOD_ID, "conga")), 2, 1);
+					guardPigs.playSound(new SoundEvent(new ResourceLocation(BasicNetherOres.MOD_ID, "pigalert")), 2, 1);
 					guardPigs.setHeldItem(guardPigs.getActiveHand(), new ItemStack(Items.DIAMOND_SWORD));
 					isAlpha = false;
 				}

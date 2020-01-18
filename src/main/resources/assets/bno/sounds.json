@@ -7,5 +7,14 @@
       }
     ],
     "subtitle": "subtitles.bno:conga"
+  },
+  "pigalert": {
+    "sounds": [
+      {
+        "name": "bno:pigalert",
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.bno:pigalert"
   }
 }
