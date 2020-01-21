@@ -26,6 +26,8 @@ public class WorldGenCustomOres implements IWorldGenerator
 	private WorldGenerator ore_netheriron;
 	private WorldGenerator ore_netheruranium;
 	private WorldGenerator ore_netherlead;
+	private WorldGenerator ore_nethertin;
+	private WorldGenerator ore_nethercopper;
 	
 	public WorldGenCustomOres() 
 	{
@@ -39,6 +41,8 @@ public class WorldGenCustomOres implements IWorldGenerator
 		ore_netheriron = new WorldGenMinable(BlockOreInit.ORE_NETHERIRON.getDefaultState(), ConfigHandler.ironVeinSize, BlockMatcher.forBlock(Blocks.NETHERRACK));
 		ore_netheruranium = new WorldGenMinable(BlockOreInit.ORE_NETHERURANIUM.getDefaultState(), ConfigHandler.copperVeinSize, BlockMatcher.forBlock(Blocks.NETHERRACK));
 		ore_netherlead = new WorldGenMinable(BlockOreInit.ORE_NETHERLEAD.getDefaultState(), ConfigHandler.tinVeinSize, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		ore_nethercopper = new WorldGenMinable(BlockOreInit.ORE_NETHERCOPPER.getDefaultState(), ConfigHandler.tinVeinSize, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		ore_nethertin = new WorldGenMinable(BlockOreInit.ORE_NETHERTIN.getDefaultState(), ConfigHandler.tinVeinSize, BlockMatcher.forBlock(Blocks.NETHERRACK));
 	}
 
 	@Override
@@ -57,7 +61,8 @@ public class WorldGenCustomOres implements IWorldGenerator
 			runGenerator(ore_netheriron, world, random, chunkX, chunkZ, ConfigHandler.ironChance, ConfigHandler.ironMinHeight, ConfigHandler.ironMaxHeight);
 			runGenerator(ore_netheruranium, world, random, chunkX, chunkZ, ConfigHandler.copperChance, ConfigHandler.copperMinHeight, ConfigHandler.copperMaxHeight);
 			runGenerator(ore_netherlead, world, random, chunkX, chunkZ, ConfigHandler.tinChance, ConfigHandler.tinMinHeight, ConfigHandler.tinMaxHeight);
-
+			runGenerator(ore_nethercopper, world, random, chunkX, chunkZ, ConfigHandler.tinChance, ConfigHandler.tinMinHeight, ConfigHandler.tinMaxHeight);
+			runGenerator(ore_nethertin, world, random, chunkX, chunkZ, ConfigHandler.tinChance, ConfigHandler.tinMinHeight, ConfigHandler.tinMaxHeight);
 		}
 	}
 	

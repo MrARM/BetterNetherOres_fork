@@ -23,6 +23,8 @@ public class ConfigHandler {
             "bno:ore_nethergold",
             "bno:ore_netheriron",
             "bno:ore_nethercoal",
+            "bno:ore_nethertin",
+            "bno:ore_nethercopper",
             "bno:ore_netheruranium",
             "bno:ore_netherlead",
             "minecraft:glowstone",
@@ -75,14 +77,26 @@ public class ConfigHandler {
     public static int ironChance = 50;
     public static int ironMinHeight = 0;
     public static int ironMaxHeight = 125;
+    
+  //lead Settings
+    public static int leadVeinSize = 2;
+    public static int leadChance = 15;
+    public static int leadMinHeight = 0;
+    public static int leadMaxHeight = 125;
 
-    //Uranium Settings
+    //uranium Settings
+    public static int uraniumVeinSize = 6;
+    public static int uraniumChance = 10;
+    public static int uraniumMinHeight = 0;
+    public static int uraniumMaxHeight = 125;
+
+    //copper Settings
     public static int copperVeinSize = 2;
     public static int copperChance = 15;
     public static int copperMinHeight = 0;
     public static int copperMaxHeight = 125;
 
-    //Lead Settings
+    //Tin Settings
     public static int tinVeinSize = 6;
     public static int tinChance = 10;
     public static int tinMinHeight = 0;
@@ -152,6 +166,16 @@ public class ConfigHandler {
         tinChance = config.getInt("Lead Spawn Chance",category, 15, 0, 75, "Set Tin Spawn Chance");
         tinMinHeight = config.getInt("Lead Min Height", category, 0,0,125, "Set Tin Min Spawn Height");
         tinMaxHeight = config.getInt("Lead Max Height", category, 127, 0, 126, "Set Tin Max Spawn Height");
+        
+        uraniumVeinSize = config.getInt("Uranium Vein Size", category, 2, 0, 64, "Set Uranium Vein Size");
+        uraniumChance = config.getInt("Uranium Spawn Chance",category, 15, 0, 75, "Set Uranium Spawn Chance");
+        uraniumMinHeight = config.getInt("Uranium Min Height", category, 0,0,125, "Set Uranium Min Spawn Height");
+        uraniumMaxHeight = config.getInt("Uranium Max Height", category, 60, 0, 126, "Set Uranium Max Spawn Height");
+
+        leadVeinSize = config.getInt("Lead Vein Size", category, 6, 0, 64, "Set Lead Vein Size");
+        leadChance = config.getInt("Lead Spawn Chance",category, 15, 0, 75, "Set Lead Spawn Chance");
+        leadMinHeight = config.getInt("Lead Min Height", category, 0,0,125, "Set Lead Min Spawn Height");
+        leadMaxHeight = config.getInt("Lead Max Height", category, 127, 0, 126, "Set Lead Max Spawn Height");
 
 
         config.save();
