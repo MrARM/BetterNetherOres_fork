@@ -80,13 +80,13 @@ public class ConfigHandler {
     public static int copperVeinSize = 2;
     public static int copperChance = 15;
     public static int copperMinHeight = 0;
-    public static int copperMaxHeight = 60;
+    public static int copperMaxHeight = 125;
 
     //Lead Settings
     public static int tinVeinSize = 6;
     public static int tinChance = 10;
     public static int tinMinHeight = 0;
-    public static int tinMaxHeight = 127;
+    public static int tinMaxHeight = 125;
 
     public static void init(File file) {
 
