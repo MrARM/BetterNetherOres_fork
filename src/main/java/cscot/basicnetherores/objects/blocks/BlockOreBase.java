@@ -183,15 +183,19 @@ public class BlockOreBase extends Block implements IHasModel {
     		if(entity instanceof EntityPigZombie) {
     			
     			EntityPigZombie guardPigs = (EntityPigZombie)entity;
-
+    			
     			// Alpha pig
 				if(thief.getMaxHealth() == thief.getHealth() && isAlpha) {
 					guardPigs.playSound(new SoundEvent(new ResourceLocation(BasicNetherOres.MOD_ID, "pigalert")), 2, 1);
-					guardPigs.setHeldItem(guardPigs.getActiveHand(), new ItemStack(Items.DIAMOND_SWORD));
+					if(!thief.world.isRemote) {
+						guardPigs.setHeldItem(guardPigs.getActiveHand(), new ItemStack(Items.DIAMOND_SWORD));
+					}
 					isAlpha = false;
 				}
-
-    			guardPigs.setRevengeTarget(thief);
+				
+				if(!thief.world.isRemote) {
+					guardPigs.setRevengeTarget(thief);
+				}
     		}
     	}
 	}
